@@ -10,9 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var uiSendStatusLabel: UILabel!
+    @IBOutlet weak var uiEmailTextField: UITextField!
+    @IBOutlet weak var uiMessageText: UITextField!
+    @IBOutlet weak var uiSendButton: UIButton!
+    
+    @IBAction func sendMailButtonPressed(sender: UIButton) {
+        // Send mail and set status
+        uiSendStatusLabel.hidden = false
+        uiSendStatusLabel.text = uiMessageText.text
+        uiMessageText.text = ""
+        uiMessageText.resignFirstResponder()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
